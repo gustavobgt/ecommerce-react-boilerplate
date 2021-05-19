@@ -23,12 +23,6 @@
     "eject": "react-scripts eject",
     "commit": "git-cz"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -43,7 +37,19 @@
   },
   "devDependencies": {
     "@digitalroute/cz-conventional-changelog-for-jira": "^6.3.0",
-    "cz-conventional-changelog": "3.3.0"
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "prettier": "^2.3.0"
   },
   "config": {
     "commitizen": {
