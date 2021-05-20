@@ -1,13 +1,11 @@
 import React from 'react';
-import GlobalStyle from './styles/global';
+import GlobalStyle from 'styles/global';
 
-const App = () => {
-  return (
+const App: React.FC = () => (
     <>
-      <GlobalStyle />
-      <p> ECOMMERCE BOILERPLATE</p>
+        <GlobalStyle />
+        <p> ECOMMERCE BOILERPLATE</p>
     </>
-  );
-};
+);
 
 export default App;
