@@ -1,11 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle, { getTheme } from 'styles';
-import { TestComponent } from 'components';
+import RouterConfig from 'navigation/router.config';
 
 const App: React.FC = () => {
-    const [selectedTheme, setSelectedTheme] = React.useState('light');
+    // const [selectedTheme, setSelectedTheme] = React.useState('light');
 
+    /*
     const theme = React.useMemo(() => {
         return getTheme(selectedTheme);
     }, [selectedTheme]);
@@ -14,14 +15,17 @@ const App: React.FC = () => {
         setSelectedTheme((prevState) =>
             prevState === 'light' ? 'dark' : 'light'
         );
-    };
+    }; */
+
+    const theme = getTheme('light');
+
     return (
-        <>
+        <React.Suspense fallback={<div>Loading...</div>}>
             <ThemeProvider theme={theme}>
                 <GlobalStyle />
-                <TestComponent handleSwitchTheme={handleSwitchTheme} />
+                <RouterConfig />
             </ThemeProvider>
-        </>
+        </React.Suspense>
     );
 };
 
