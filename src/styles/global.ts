@@ -4,11 +4,15 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     outline: 0;
+    box-sizing: border-box;
+    
   }
-  body {
+  html, body, #root {
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    font-size:62.5%;
   }
   body, input, button {
     font-family: 'Roboto Slab', serif;
