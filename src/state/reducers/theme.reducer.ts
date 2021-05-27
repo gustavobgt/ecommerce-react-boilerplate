@@ -1,12 +1,20 @@
-import { ActionType } from 'state/actions-types';
-import { ThemeAction } from 'state/actions/theme.actions';
+import { ActionType } from 'state/actions/theme.actions';
+import { Action } from 'state/actions';
+import { ThemeState } from 'state/states/theme.state';
 
-const reducer = (state: string, action: ThemeAction): string => {
+const initialState = {
+    theme: 'light',
+};
+
+const reducer = (
+    state: ThemeState = initialState,
+    action: Action
+): ThemeState => {
     switch (action.type) {
         case ActionType.CHANGE_TO_LIGHT_THEME:
-            return 'light';
+            return { theme: 'light' };
         case ActionType.CHANGE_TO_DARK_THEME:
-            return 'dark';
+            return { theme: 'dark' };
         default:
             return state;
     }

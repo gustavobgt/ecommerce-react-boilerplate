@@ -1,11 +1,12 @@
-import { ActionType } from 'state/actions-types';
+export enum ActionType {
+    CHANGE_TO_LIGHT_THEME = 'change_to_light_theme',
+    CHANGE_TO_DARK_THEME = 'change_to_dark_theme',
+}
 
-interface ChangeToLightThemeAction {
+export interface ChangeToLightThemeAction {
     type: ActionType.CHANGE_TO_LIGHT_THEME;
 }
 
-interface ChangeToDarkThemeAction {
+export interface ChangeToDarkThemeAction {
     type: ActionType.CHANGE_TO_DARK_THEME;
 }
-
-export type ThemeAction = ChangeToLightThemeAction | ChangeToDarkThemeAction;

@@ -1,9 +1,9 @@
-import { light, dark } from './colors';
-import { space, lineHeights } from './spacing';
-import { sizes } from './sizes';
-import { fonts, fontWeights, fontSizes } from './fonts';
-import GlobalStyle from './global';
-import { Theme } from './types';
+import { light, dark } from 'styles/colors';
+import { space, lineHeights } from 'styles/spacing';
+import { sizes } from 'styles/sizes';
+import { fonts, fontWeights, fontSizes } from 'styles/fonts';
+import GlobalStyle from 'styles/global';
+import { Theme } from 'styles/types';
 
 export const getTheme = (theme: string): Theme => ({
     colors: theme === 'light' ? light : dark,

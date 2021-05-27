@@ -1,14 +1,25 @@
-import React from 'react';
-import { AppContext } from 'state/context';
-import { ThemeAction } from 'state/actions/theme.actions';
+import { useAppState } from 'state';
+import { ActionType } from 'state/actions/theme.actions';
 
 interface Hook {
-    currentTheme: string;
-    dispatch: ({ type }: ThemeAction) => void;
+    theme: string;
+    handleThemeChange: () => void;
 }
 
 export const useTheme = (): Hook => {
-    const { state, dispatch } = React.useContext(AppContext);
-    const { currentTheme } = state;
-    return { currentTheme, dispatch };
+    const { state, dispatch } = useAppState();
+    const { theme } = state;
+
+    const handleThemeChange = (): void => {
+        const actionType =
+            theme === 'light'
+                ? ActionType.CHANGE_TO_DARK_THEME
+                : ActionType.CHANGE_TO_LIGHT_THEME;
+
+        dispatch({
+            type: actionType,
+        });
+    };
+
+    return { theme, handleThemeChange };
 };

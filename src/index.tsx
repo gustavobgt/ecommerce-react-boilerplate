@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import Provider from 'state/context';
+import { AppStateProvider } from 'state';
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
 
@@ -10,11 +10,11 @@ const history = createBrowserHistory();
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider>
+        <AppStateProvider>
             <Router history={history}>
                 <App />
             </Router>
-        </Provider>
+        </AppStateProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );

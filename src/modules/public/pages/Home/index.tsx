@@ -1,24 +1,16 @@
 import React from 'react';
 import { useTheme } from 'hooks/useTheme';
-import { ActionType } from 'state/actions-types';
 
 const Home: React.FC = () => {
-    const { currentTheme, dispatch } = useTheme();
-    const actionType =
-        currentTheme === 'light'
-            ? ActionType.CHANGE_TO_DARK_THEME
-            : ActionType.CHANGE_TO_LIGHT_THEME;
+    const { theme, handleThemeChange } = useTheme();
 
     return (
         <div>
             <h1>HOME</h1>
-            <button
-                type="button"
-                onClick={() =>
-                    dispatch({
-                        type: actionType,
-                    })
-                }>
+            <p>
+                CURRENT THEME <strong>{theme}</strong>{' '}
+            </p>
+            <button type="button" onClick={handleThemeChange}>
                 CHANGE THEME
             </button>
         </div>

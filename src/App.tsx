@@ -5,15 +5,15 @@ import RouterConfig from 'navigation/router.config';
 import { useTheme } from 'hooks/useTheme';
 
 const App: React.FC = () => {
-    const { currentTheme } = useTheme();
+    const { theme } = useTheme();
 
-    const theme = React.useMemo(() => {
-        return getTheme(currentTheme);
-    }, [currentTheme]);
+    const currentTheme = React.useMemo(() => {
+        return getTheme(theme);
+    }, [theme]);
 
     return (
         <React.Suspense fallback={<div>Loading...</div>}>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={currentTheme}>
                 <GlobalStyle />
                 <RouterConfig />
             </ThemeProvider>
