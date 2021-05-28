@@ -3,14 +3,14 @@ const custom = require('@digitalroute/cz-conventional-changelog-for-jira/configu
 const defaultTypes = require('@digitalroute/cz-conventional-changelog-for-jira/types');
 
 module.exports = custom({
-  types: {
-    ...defaultTypes,
-    perf: {
-      description: 'Improvements that will make your code perform better',
-      title: 'Performance',
+    types: {
+        ...defaultTypes,
+        perf: {
+            description: 'Improvements that will make your code perform better',
+            title: 'Performance',
+        },
     },
-  },
-  skipScope: false,
-  scopes: ['', 'public', 'auth', 'subscriber', 'admin'],
-  jiraPrefix: 'EB',
+    skipScope: false,
+    scopes: ['', 'common', 'auth', 'subscriber', 'admin'],
+    jiraPrefix: 'EB',
 });
