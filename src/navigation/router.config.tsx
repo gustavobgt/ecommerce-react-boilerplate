@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { NotFound } from 'navigation/not-found';
 import { HOME } from 'navigation/constants';
 
-const Home = lazy(() => import('modules/public/pages/Home'));
+const Home = lazy(() => import('modules/common/screens/Home'));
 
 const RouterConfig: React.FC = () => (
     <Switch>

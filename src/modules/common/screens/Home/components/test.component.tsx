@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTheme } from 'hooks/useTheme';
 
 const Container = styled.div`
     height: 100vh;
@@ -25,13 +26,13 @@ const Button = styled.button`
     border-radius: 5px;
 `;
 
-interface Props {
-    handleSwitchTheme: () => void;
-}
-
-export const TestComponent: React.FC<Props> = ({ handleSwitchTheme }) => (
-    <Container>
-        <Text>ECOMMERCE BOILERPLATE</Text>
-        <Button onClick={handleSwitchTheme}>SWITCH THEME</Button>
-    </Container>
-);
+export const TestComponent: React.FC = () => {
+    const { theme, handleThemeChange } = useTheme();
+    return (
+        <Container>
+            <Text>ECOMMERCE BOILERPLATE</Text>
+            <Text>{theme}</Text>
+            <Button onClick={handleThemeChange}>SWITCH THEME</Button>
+        </Container>
+    );
+};
