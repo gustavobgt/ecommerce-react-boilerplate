@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AppStateProvider } from 'state';
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
     <React.StrictMode>

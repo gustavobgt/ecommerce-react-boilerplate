@@ -1,17 +1,53 @@
+/* eslint no-underscore-dangle: 0 */
 import React from 'react';
-import { TestComponent } from './components/test.component';
+import { Card } from './components';
+import { Product } from './shop.models';
 
 interface Props {
-    data: any[];
-    error: any;
+    data: Product[];
+    error: string | null;
     loading: boolean;
 }
 
 const ShopView: React.FC<Props> = ({ data, error, loading }) => {
+    const totalLoadingCards = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+    ];
     return (
         <div>
             <h1>ShopView</h1>
-            <TestComponent data={data} error={error} loading={loading} />
+            <div
+                style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                {loading
+                    ? totalLoadingCards.map((value) => (
+                          <Card product={null} key={value} loading={loading} />
+                      ))
+                    : data &&
+                      data.map((product) => (
+                          <Card
+                              key={product._id}
+                              product={product}
+                              loading={loading}
+                          />
+                      ))}
+                {error && <p>ERROR!</p>}
+            </div>
         </div>
     );
 };
