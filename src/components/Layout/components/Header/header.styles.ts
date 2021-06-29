@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    grid-area: HD;
-    color: ${(props) => props.theme.colors.ui.primary};
-    background-color: ${(props) => props.theme.colors.bg.primary};
+export const Logo = styled.div`
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
 `;

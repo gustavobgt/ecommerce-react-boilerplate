@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Layout } from 'antd';
 
-export const Container = styled.div`
-    grid-area: FT;
-    color: ${(props) => props.theme.colors.ui.primary};
-    background-color: ${(props) => props.theme.colors.bg.primary};
+const { Footer } = Layout;
+
+export const AntdFooter = styled(Footer)`
+    text-align: center;
 `;

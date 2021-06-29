@@ -1,11 +1,18 @@
 import React from 'react';
 import { RouterConfig } from 'navigation';
-import { Container } from './content.styles';
+import { AntdContent, AntdSearch } from './content.styles';
 
-export const Content: React.FC = () => {
+export const ContentComponent: React.FC = () => {
+    const onSearch = (value: string): void => console.log(value);
     return (
-        <Container>
+        <AntdContent>
+            <AntdSearch
+                placeholder="input search text"
+                onSearch={onSearch}
+                enterButton
+                size="large"
+            />
             <RouterConfig />
-        </Container>
+        </AntdContent>
     );
 };
