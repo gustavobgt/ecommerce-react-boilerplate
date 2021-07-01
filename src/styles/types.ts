@@ -15,6 +15,7 @@ export interface Colors {
         disabled: string;
         error: string;
         success: string;
+        warning: string;
     };
     bg: {
         primary: string;
@@ -26,6 +27,7 @@ export interface Colors {
         disabled: string;
         error: string;
         success: string;
+        warning: string;
     };
 }
 

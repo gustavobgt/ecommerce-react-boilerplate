@@ -1,10 +1,10 @@
 import React from 'react';
-import { AntdFooter } from './footer.styles';
+import { Footer } from './footer.styles';
 
 export const FooterComponent: React.FC = () => {
     return (
-        <AntdFooter>
+        <Footer>
             Todos os Direitos Reservados © {new Date().getFullYear()}
-        </AntdFooter>
+        </Footer>
     );
 };

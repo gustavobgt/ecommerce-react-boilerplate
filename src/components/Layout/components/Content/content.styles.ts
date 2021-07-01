@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Layout, Input } from 'antd';
 
-const { Content } = Layout;
-const { Search } = Input;
+const { Content: AntdContent } = Layout;
+const { Search: AntdSearch } = Input;
 
-export const AntdContent = styled(Content)`
+export const Content = styled(AntdContent)`
     padding: ${(props) => props.theme.space[4]};
 `;
 
-export const AntdSearch = styled(Search)`
+export const Search = styled(AntdSearch)`
     margin-bottom: ${(props) => props.theme.space[4]};
 `;
