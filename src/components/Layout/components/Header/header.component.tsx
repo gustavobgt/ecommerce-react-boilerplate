@@ -1,36 +1,48 @@
 import React, { FC, useState } from 'react';
-import { Drawer, Badge } from 'antd';
+import { Badge } from 'antd';
 import { Link } from 'react-router-dom';
 import {
     UserOutlined,
     RightOutlined,
     ShoppingCartOutlined,
 } from '@ant-design/icons';
+import { useTheme } from 'hooks/useTheme';
 
-import { Header, Logo, Menu } from './header.styles';
+import { SideDrawer } from './components';
+import { Header, Logo, Switch, Menu } from './header.styles';
 
 const { Item } = Menu;
 
 export const HeaderComponent: FC = () => {
-    const [visible, setVisible] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-    const showDrawer = (): void => {
-        setVisible(true);
+    const { handleThemeChange } = useTheme();
+
+    const handleDrawerOpen = (): void => {
+        setIsDrawerOpen(true);
     };
 
-    const onClose = (): void => {
-        setVisible(false);
+    const handleDrawerClose = (): void => {
+        setIsDrawerOpen(false);
     };
+
     return (
         <>
             <Header>
                 <Logo />
 
+                <Switch
+                    checkedChildren="light"
+                    unCheckedChildren="dark"
+                    defaultChecked
+                    onClick={handleThemeChange}
+                />
+
                 <Menu mode="horizontal" defaultSelectedKeys={['2']}>
                     <Item
                         key="my-account"
                         icon={<UserOutlined />}
-                        onClick={showDrawer}>
+                        onClick={handleDrawerOpen}>
                         Minha Conta <RightOutlined />
                     </Item>
 
@@ -43,16 +55,11 @@ export const HeaderComponent: FC = () => {
                     </Item>
                 </Menu>
             </Header>
-            <Drawer
-                title="Minha conta"
-                placement="right"
-                closable={false}
-                onClose={onClose}
-                visible={visible}>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-            </Drawer>
+
+            <SideDrawer
+                isDrawerOpen={isDrawerOpen}
+                handleDrawerClose={handleDrawerClose}
+            />
         </>
     );
 };

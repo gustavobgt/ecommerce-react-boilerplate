@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout } from 'antd';
 
+import { Layout } from './layout.styles';
 import { Header, Content, Footer } from './components';
 
 export const LayoutComponent: React.FC = () => {
