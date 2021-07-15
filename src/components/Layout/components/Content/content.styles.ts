@@ -1,7 +1,13 @@
 import styled from 'styled-components';
+import { Layout, Input } from 'antd';
 
-export const Container = styled.div`
-    grid-area: CT;
-    color: ${(props) => props.theme.colors.ui.primary};
-    background-color: ${(props) => props.theme.colors.bg.primary};
+const { Content: AntdContent } = Layout;
+const { Search: AntdSearch } = Input;
+
+export const Content = styled(AntdContent)`
+    padding: ${(props) => props.theme.space[4]};
+`;
+
+export const Search = styled(AntdSearch)`
+    margin-bottom: ${(props) => props.theme.space[4]};
 `;

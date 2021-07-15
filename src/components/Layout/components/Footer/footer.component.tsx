@@ -1,11 +1,10 @@
 import React from 'react';
+import { Footer } from './footer.styles';
 
-import { Container } from './footer.styles';
-
-export const Footer: React.FC = () => {
+export const FooterComponent: React.FC = () => {
     return (
-        <Container>
-            <h1>Footer</h1>
-        </Container>
+        <Footer>
+            Todos os Direitos Reservados © {new Date().getFullYear()}
+        </Footer>
     );
 };

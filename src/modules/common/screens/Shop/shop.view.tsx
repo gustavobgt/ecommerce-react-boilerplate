@@ -35,11 +35,10 @@ const ShopView: React.FC<Props> = ({ data, error, loading }) => {
                     justifyContent: 'center',
                 }}>
                 {loading
-                    ? totalLoadingCards.map((value) => (
+                    ? totalLoadingCards?.map((value) => (
                           <Card product={null} key={value} loading={loading} />
                       ))
-                    : data &&
-                      data.map((product) => (
+                    : data?.map((product) => (
                           <Card
                               key={product._id}
                               product={product}

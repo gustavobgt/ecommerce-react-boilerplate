@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle, { getTheme } from 'styles';
 import { Layout } from 'components';
 import { useTheme } from 'hooks/useTheme';
 
-const App: React.FC = () => {
+const App: FC = () => {
     const { theme } = useTheme();
 
     const currentTheme = React.useMemo(() => {
@@ -12,12 +12,12 @@ const App: React.FC = () => {
     }, [theme]);
 
     return (
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
             <ThemeProvider theme={currentTheme}>
                 <GlobalStyle />
                 <Layout />
             </ThemeProvider>
-        </React.Suspense>
+        </Suspense>
     );
 };
 

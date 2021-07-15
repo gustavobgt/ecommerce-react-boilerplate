@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { Grid } from './layout.styles';
-
+import { Layout } from './layout.styles';
 import { Header, Content, Footer } from './components';
 
-export const Layout: React.FC = () => {
+export const LayoutComponent: React.FC = () => {
     return (
-        <Grid>
+        <Layout>
             <Header />
             <Content />
             <Footer />
-        </Grid>
+        </Layout>
     );
 };
