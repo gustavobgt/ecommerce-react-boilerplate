@@ -27,6 +27,7 @@ export const SideDrawerComponent: FC<Props> = ({
             title={
                 <Tooltip title="Fechar Menu" placement="left">
                     <Title
+                        data-testid="sidedrawer-title"
                         type="text"
                         icon={<LeftOutlined />}
                         onClick={handleDrawerClose}>
@@ -39,18 +40,21 @@ export const SideDrawerComponent: FC<Props> = ({
             onClose={handleDrawerClose}
             visible={isDrawerOpen}>
             <Item
+                data-testid="sidedrawer-my-orders-item"
                 type="text"
                 icon={<ProfileOutlined />}
                 onClick={() => handleNavigateTo('/user/orders')}>
                 Meus Pedidos
             </Item>
             <Item
+                data-testid="sidedrawer-signin-signout-item"
                 type="text"
                 icon={<UserAddOutlined />}
                 onClick={() => handleNavigateTo('/login')}>
                 Entre ou Cadastre-se
             </Item>
             <Item
+                data-testid="sidedrawer-my-favorities-item"
                 type="text"
                 icon={<HeartOutlined />}
                 onClick={() => handleNavigateTo('/user/favorites')}>

@@ -40,6 +40,7 @@ export const HeaderComponent: FC = () => {
 
                 <Menu mode="horizontal" defaultSelectedKeys={['2']}>
                     <Item
+                        data-testid="header-menu-my-account-item"
                         key="my-account"
                         icon={<UserOutlined />}
                         onClick={handleDrawerOpen}>
